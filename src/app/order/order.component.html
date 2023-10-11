@@ -1,0 +1,100 @@
+<div class="mh-200vw">
+  <h2>Оформить заказ</h2>
+
+  <form class="order__form form" [formGroup]="formOrder" (ngSubmit)="sendForm()">
+
+    <div class="form-group">
+      <div class="flex-row">
+        <label>Имя и Фамилия</label>
+        <div class="error" *ngIf="nameControl?.hasError('pattern')">: ошибка! Имя и Фамилия некорректные</div>
+        <div class="error" *ngIf="nameControl?.hasError('required')">* обязательное поле</div>
+      </div>
+      <input class="form-control" name="name" formControlName="name" pattern="[A-Za-zА-Яа-я-]+\s[A-Za-zА-Яа-я-]+[A-Za-zА-Яа-я -]*">
+    </div>
+
+    <div class="form-group">
+      <div class="flex-row">
+        <label>Телефон</label>
+        <div class="error" *ngIf="phoneControl?.hasError('pattern')">: ошибка! Номер телефона некорректный</div>
+        <div class="error" *ngIf="phoneControl?.hasError('required')">* обязательное поле, включает "+7" и девять цифр</div>
+      </div>
+      <input class="form-control" name="phone" formControlName="phone" pattern="\+7+[0-9]{9,9}">
+    </div>
+
+    <div class="form-group">
+      <div class="flex-row">
+        <h3>Способ получения товара</h3>
+        <div class="error radio-label" *ngIf="receivingControl?.hasError('required')">* должен быть выбран один из двух вариантов</div>
+      </div>
+      <div class="flex-row form__receiving">
+        <input class="form-control radio" id="delyvery" type="radio" name="receiving" formControlName="receiving" [value]="'delyvery'" (change)="fieldsDisable()">
+        <label class="radio-label" for="delyvery">Доставка</label>
+      </div>
+      <div class="flex-row form__receiving">
+        <input class="form-control radio" id="shop" type="radio" name="receiving" formControlName="receiving" [value]="'shop'" (change)="fieldsDisable()">
+        <label class="radio-label" for="shop">Забрать в магазине</label>
+      </div>
+    </div>
+
+    <section class="form-group-adress">
+      <ng-container formGroupName="adress">
+
+        <h3>Адрес доставки <span *ngIf="this.receivingControl?.value === 'shop'" class="color-grey">(доступно только для способа получения "доставка")</span></h3>
+        <div class="form-group">
+          <div class="flex-row">
+            <label>Город</label>
+            <div class="error" *ngIf="cityControl?.hasError('required')">* обязательное поле для способа получения "доставка"</div>
+          </div>
+          <select class="form-control" name="city" formControlName="city">
+          <option *ngFor="let item of availableCities" [value]="item['city']">{{item['city']}}</option>
+        </select>
+        </div>
+
+        <div class="form-group">
+          <div class="flex-row">
+            <label>Улица</label>
+            <div class="error" *ngIf="streetControl?.hasError('required')">* обязательное поле для способа получения "доставка"</div>
+          </div>
+          <input class="form-control" name="street" formControlName="street">
+        </div>
+
+        <div class="form-group">
+          <div class="flex-row">
+            <label>Дом</label>
+            <div class="error" *ngIf="houseControl?.hasError('required')">* обязательное поле для способа получения "доставка"</div>
+          </div>
+          <input class="form-control" name="house" formControlName="house">
+        </div>
+
+        <div class="form-group">
+          <div class="flex-row">
+            <label>Квартира</label>
+            <div class="error" *ngIf="flatControl?.hasError('required')">* обязательное поле для способа получения "доставка"</div>
+          </div>
+          <input class="form-control" name="flat" formControlName="flat">
+        </div>
+
+      </ng-container>
+    </section>
+
+    <div class="form-group">
+      <div class="flex-row">
+        <h3>Способ оплаты</h3>
+        <div class="error radio-label" *ngIf="paymentControl?.hasError('required')">* должен быть выбран один из двух вариантов</div>
+      </div>
+      <div class="flex-row form__receiving">
+        <input class="form-control radio" id="cache" type="radio" name="payment" formControlName="payment" [value]="'cache'">
+        <label class="radio-label" for="cache">Наличные <span  *ngIf="this.receivingControl?.value === 'delyvery'" class="color-grey">(доступно только при получении в магазине)</span>
+          </label>
+      </div>
+      <div class="flex-row form__receiving">
+        <input class="form-control radio" id="card" type="radio" name="payment" formControlName="payment" [value]="'card'">
+        <label class="radio-label" for="card">Банковская карта</label>
+      </div>
+    </div>
+
+    <app-button [size]="'large'" [text]='setText()' [color]="setColor()"></app-button>
+
+  </form>
+
+</div>

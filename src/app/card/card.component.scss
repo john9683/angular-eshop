@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 240px;
+  padding: 20px;
+  border-radius: 10px;
+  // border: 1px solid rgb(231, 230, 230); // стиль приходит из директивы в каталоге
+  transition: all .15s ease-in-out;
+}
+
+// .flex-center {
+//   display: flex;
+//   justify-content: center;
+// }
+// .mb-20 {
+//   margin-bottom: 20px;
+// }
+// .mr-20 {
+//   margin-right: 20px;
+// }
+// .fw-600 {
+//   font-weight: 600;
+// }
+// .h-200 {
+//   height: 200px;
+// }
+// .w-200 {
+//   width: 200px;
+// }
+// .img-contain {
+//   object-fit: contain;
+// }
