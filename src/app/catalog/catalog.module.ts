@@ -36,7 +36,6 @@ import { TooltipContentComponent } from '../components/tooltip-content/tooltip-c
         ToggleComponent,
         ToggleGroupComponent,
         NgForObjectDirective,
-        // ClickCloseDirective,
         BorderRadiusDirective,
         TooltipDirective,
         TooltipContainerDirective,

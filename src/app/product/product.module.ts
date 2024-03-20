@@ -14,7 +14,6 @@ import { LoaderModule } from 'src/app/loader/loader.module';
     CommonModule,
     ProductRoutingModule,
     LoaderModule
-    // CatalogRoutingModule
   ],
   exports: [ProductComponent],
   providers: [CatalogService],

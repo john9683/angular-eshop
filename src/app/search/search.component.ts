@@ -29,7 +29,6 @@ export class SearchComponent implements OnInit {
 
   close() {
     this.searchForm.reset();
-    // без "?" в консоль валятся ошибки до инициализации инпута
     this.input?.classList.remove('shadow')
   }
 

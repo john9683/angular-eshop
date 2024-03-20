@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[borderradius]' //  'div[borderradius]' -- так директива будет применяться тольк к элеменатм div
+  selector: '[borderradius]'
 })
 export class BorderRadiusDirective {
 
@@ -39,8 +39,5 @@ export class BorderRadiusDirective {
   @HostBinding('class.hover') get hover() {
     return this.isHover
   }
-  // @HostBinding('style.cursor') get pointer() {
-  //   return this.isHover ? 'pointer' : 'default'
-  // }
 
 }

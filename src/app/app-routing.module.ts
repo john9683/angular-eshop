@@ -12,8 +12,6 @@ import { OrderComponent } from './order/order.component';
 export const routes: Routes = [
   {
     path:'',
-    // redirectTo: 'catalog', // для редиректа
-    // pathMatch: 'full' // для редиректа
     component: HomeComponent
   },
   {
@@ -59,18 +57,15 @@ export const routes: Routes = [
 ];
 
 export const options: ExtraOptions = {
-  enableTracing: false,     // трассировка роутинга - true
-  // scrollPositionRestoration: 'enabled', // при данной настройке страница скроллит наверх при изменении url методом getQuery()
-  // scrollPositionRestoration: 'disabled',
-  // anchorScrolling: 'disabled',
-  preloadingStrategy: PreloadAllModules // для загрузки независимых модулей
+  enableTracing: false,
+  preloadingStrategy: PreloadAllModules
 }
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, options)],
   exports: [RouterModule],
   providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy} // для использования хэша - # (нужен для корректной работы в поисковой строке при деплое)
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ]
 })
 export class AppRoutingModule { }

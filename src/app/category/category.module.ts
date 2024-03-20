@@ -8,9 +8,6 @@ import { TooltipContainerDirective } from '../directives/tooltip-container.direc
 @NgModule({
   declarations: [
     CategoryComponent,
-    // TooltipComponent,
-    // TooltipDirective,            // почему-то отсюда директивы не видны
-    // TooltipContainerDirective,  // почему-то отсюда директивы не видны
   ],
   imports: [
     CommonModule

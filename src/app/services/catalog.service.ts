@@ -21,22 +21,17 @@ export class CatalogService {
     private route: ActivatedRoute,
     ) {}
 
-
-    // 1 записать Query
     applyQuery(param: QueryOptions): void {
         this.router.navigate([], {
         relativeTo: this.route,
         queryParams: param,
-        // queryParamsHandling: 'merge',
       })
     }
 
-    // 2 получить Query
     getQuery(){
       return this.route.snapshot.queryParams;
     }
 
-    // 3 получить товары по Query
     getProducts(page: number = 1, filterBy: FilterTypes): Observable<DataFromServer> {
 
       this.applyQuery({ page: page, orderBy: filterBy });
@@ -46,12 +41,10 @@ export class CatalogService {
       );
     }
 
-    // получить товар по id или ошибку запроса
     getProduct(productId: number): Product | undefined {
       this.dataService.getProductById(productId)
         .subscribe(
           (result => {this.product = result;
-            // Object.keys(result).forEach((key) => { console.log('prop:', key, result[key])});
           }),
           (httpResponse => {console.log('Ошибка запроса:', httpResponse.error.message); {if (httpResponse.status === 404) this.router.navigate(['not-found'])}})
         );

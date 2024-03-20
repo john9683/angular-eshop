@@ -10,8 +10,7 @@ export class CartService {
 
   constructor() { }
 
-  // 1 тз
-  addProduct($event: Product): ProductInCart[] {  // using in catalog.component.html
+  addProduct($event: Product): ProductInCart[] {
     const countTheProduct = this.inCart.filter(count => count.product === $event).length ?? 0;
      if (countTheProduct === 0) {
       this.inCart.push({product: $event, count:1});
@@ -23,8 +22,7 @@ export class CartService {
     return this.inCart;
   }
 
-  // 2 тз
-  removeProduct($event: Product): ProductInCart[] { // using in catalog.component.html
+  removeProduct($event: Product): ProductInCart[] {
     const index = this.inCart.findIndex(ProductInCart => ProductInCart.product === $event);
      if (index !== -1) {
       this.inCart.splice(index, 1);
@@ -33,13 +31,11 @@ export class CartService {
     return this.inCart;
   }
 
-  // 3 тз
-  getCart(): ProductInCart[] { // using in cart.component.html
+  getCart(): ProductInCart[] {
     return this.inCart;
   }
 
-  // 4 тз
-  getCount(): number {         // using in cart.component.html
+  getCount(): number {
     return this.inCart.length;
   }
 

@@ -43,14 +43,8 @@ export class ToggleGroupComponent implements OnInit, AfterContentInit {
 
     const clicks$: Array<Observable<ToggleComponent>> = this.toggleComponents.map(toggleComponent => toggleComponent.click$.pipe(map(() => toggleComponent)));
     merge(...clicks$).subscribe(toggleComponent => { this.emitChangeActiveToggle.emit(toggleComponent.filterBy);
-      // merge(...clicks$).subscribe(toggleComponent => {this.handlerClickToggle(toggleComponent);
-
     });
   }
-
-  // private handlerClickToggle(toggle: ToggleComponent) { // обработчик не нужен - передаю emitChangeActiveToggle сразу в merge(...clicks$)
-  //   this.emitChangeActiveToggle.emit(toggle.filterBy)
-  // }
 
   constructor( public catalogService: CatalogService, private cdr: ChangeDetectorRef,  ) { }
 

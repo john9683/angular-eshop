@@ -28,9 +28,6 @@ import { Product } from 'src/app/interfaces-and-types/interfaces';
   .mb-5 {
     margin-bottom: 5px;
   }
-  /* .mb-20 {
-    margin-bottom: 20px;
-  } */
 
   .img-contain {
     object-fit: contain;
@@ -39,10 +36,6 @@ import { Product } from 'src/app/interfaces-and-types/interfaces';
   img {
     transition: transform .15s ease-in-out;
   }
-
-  /* img:hover {
-    transform: translateY(-20px);
-  } */
 
   .images-wrap {
     position: relative;

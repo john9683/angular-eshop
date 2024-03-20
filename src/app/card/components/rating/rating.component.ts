@@ -3,7 +3,6 @@ import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 @Component({
   selector: 'app-rating',
   template: `
-     <!-- <div class="mb-20 fw-400"></div> -->
   `,
   styles:  [`
 

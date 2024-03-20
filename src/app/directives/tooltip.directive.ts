@@ -6,8 +6,8 @@ import { tooltipPosition } from '../interfaces-and-types/types';
   selector: '[tooltip]'
 })
 export class TooltipDirective implements OnDestroy {
-  @Input() tooltipPosition: tooltipPosition = 'above'; // позиционирование тултипа
-  @Input() tooltipMargin: number = 10;                  // отсуп (px) тултипа от хоста
+  @Input() tooltipPosition: tooltipPosition = 'above';
+  @Input() tooltipMargin: number = 10;
   @Input('tooltip') content: string | TemplateRef<any> | Type<any>
 
   private componentRef: ComponentRef<TooltipComponent>

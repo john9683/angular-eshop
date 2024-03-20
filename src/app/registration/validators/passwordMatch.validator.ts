@@ -5,7 +5,6 @@ export function PasswordMatchValidator(form: FormGroup): ValidationErrors | null
   const passwordConfirmField = form.controls['passwordConfirm']
 
   if(!passwordField || !passwordConfirmField){return null}
-  // if(passwordConfirmField.errors && !passwordConfirmField.errorpasswordMatch){return null}
 
   return passwordField.value !== passwordConfirmField.value ? {passwordMatch: true} : null
 

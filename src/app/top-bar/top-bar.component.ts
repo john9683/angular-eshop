@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class TopBarComponent implements OnInit {
 
-  openRoute(route: string): void { // роут для кнопки Избранное
-    this.router.navigate(['/', route]) // роут для кнопки Избранное
+  openRoute(route: string): void {
+    this.router.navigate(['/', route])
   }
 
-  constructor(private router: Router) { } // роут для кнопки Избранное
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

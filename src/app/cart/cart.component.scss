@@ -1,73 +1,73 @@
 .position-relative {
-  position: relative;
+    position: relative;
 }
 
 .cart__btn__bage {
-  position: absolute;
-  top: -30px;
-  right: 0;
-  padding: 10px 20px;
-  border-radius: 20px; // перенёс в директиву BorderRadiusDirective
-  color: white;
-  background-color: rgb(226, 47, 181); // перенёс в директиву BorderRadiusDirective
+    position: absolute;
+    top: -30px;
+    right: 0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(226, 47, 181);
 }
 
 .cart {
-  position: absolute;
-  z-index: 1;
-  top: 70px;
-  right: 0;
-  padding-top: 0;
-  width: 340px;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  border: 1px solid rgb(231, 230, 230);
-  box-shadow: 0 4px 8px rgba(0, 0, 0.15);
+    position: absolute;
+    z-index: 1;
+    top: 70px;
+    right: 0;
+    padding-top: 0;
+    width: 340px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid rgb(231, 230, 230);
+    box-shadow: 0 4px 8px rgba(0, 0, 0.15);
 }
 
 @media (max-width: 420px) {
-  .cart {
-    width: 240px;
-  }
+    .cart {
+        width: 240px;
+    }
 }
 
 .cart__header {
-  padding-bottom: 10px;
-  font-weight: 600;
+    padding-bottom: 10px;
+    font-weight: 600;
 }
 
 .flex-between {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .align-items-end {
-  display: flex;
-  align-items: flex-end
+    display: flex;
+    align-items: flex-end
 }
 
 .material-icons {
-  color: black;
-  transition: color .15s ease-in-out;
+    color: black;
+    transition: color .15s ease-in-out;
 }
 
 .material-icons:hover:not(:active) {
-  color: #0d6efd;
+    color: #0d6efd;
 }
 
 .material-icons:active {
-  color: rgb(226, 47, 181);
+    color: rgb(226, 47, 181);
 }
 
 .mr-20 {
-  margin-right: 20px;
+    margin-right: 20px;
 }
 
 .mb-20 {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .border-bottom {
-  border-bottom: 1px solid rgb(231, 230, 230);
+    border-bottom: 1px solid rgb(231, 230, 230);
 }

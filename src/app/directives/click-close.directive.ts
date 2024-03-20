@@ -1,6 +1,3 @@
-// директива цепляется на любой элемент, в инпут директивы передаётся id кнопки закрытия,
-// при клике вне элемента директивы у кнопки закрытия будет вызван метод click()
-
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
@@ -24,7 +21,6 @@ export class ClickCloseDirective {
    {
     this.btnClose = document.getElementById(`${this.btnCloseId}`)
 
-    // if (this.host.contains(event)) return
     if (!this.host.contains(event)) {this.btnClose.click()} else return
 
   }

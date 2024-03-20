@@ -21,11 +21,6 @@ export interface Toggle {
   filterBy: any;
 }
 
-// export interface SearchToggle {
-//   label: string;
-//   filterBy: string;
-// }
-
 export interface Meta {
   [key: string]: number;
 }
@@ -47,11 +42,3 @@ export interface SliderContext {
   }
 }
 
-// export interface CacheItem {
-//   url: string | number,
-//   value: DataFromServer,
-// }
-
-// export interface Cache {
-//   cacheItems?:  CacheItem[],
-//  }

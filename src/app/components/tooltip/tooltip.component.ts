@@ -30,8 +30,8 @@ import { tooltipPosition } from 'src/app/interfaces-and-types/types';
 })
 export class TooltipComponent implements AfterViewInit  {
 
-  tooltipTop: number // переменная для позиционирования тултипа по вертикали
-  tooltipLeft: number // переменная для позиционирования тултипа по горизонтали
+  tooltipTop: number
+  tooltipLeft: number
 
   @ViewChild(TooltipContainerDirective, {read: ElementRef}) private tooltipContainer: ElementRef
 
@@ -47,8 +47,8 @@ export class TooltipComponent implements AfterViewInit  {
     const TOOLTIP_HEIGHT = this.tooltipContainer.nativeElement.getBoundingClientRect().height
     const TOOLTIP_WIDTH = this.tooltipContainer.nativeElement.getBoundingClientRect().width
 
-    const REQUIRED_TOOLTIP_HEIGHT = TOOLTIP_HEIGHT + this.config.tooltipMargin * 2; // требуемое пространство по вертикали
-    const REQUIRED_TOOLTIP_WIDTH = TOOLTIP_WIDTH + this.config.tooltipMargin * 2; // требуемое пространство по горизонтали
+    const REQUIRED_TOOLTIP_HEIGHT = TOOLTIP_HEIGHT + this.config.tooltipMargin * 2;
+    const REQUIRED_TOOLTIP_WIDTH = TOOLTIP_WIDTH + this.config.tooltipMargin * 2;
 
     const TOOLTIP_ABOVE = HOST_TOP - TOOLTIP_HEIGHT - this.config.tooltipMargin
     const TOOLTIP_BELOW = HOST_TOP + HOST_HEIGHT + this.config.tooltipMargin

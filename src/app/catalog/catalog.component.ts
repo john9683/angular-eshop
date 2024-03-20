@@ -29,7 +29,6 @@ export class CatalogComponent implements OnInit {
   destroy$ = new Subject<void>();
   toggleValue:any;
 
-    // *** Toggles ***
   @Input() filterBy: FilterTypes;
   @Input() selected!: Toggle | undefined;
   @Input() isActive = false;
@@ -42,7 +41,6 @@ export class CatalogComponent implements OnInit {
     {label: 'По производителю', filterBy: 'company'},
     {label: 'По названию товара', filterBy: 'title'},
   ];
-
 
   constructor(
     public dataService: DataService,
@@ -57,7 +55,6 @@ export class CatalogComponent implements OnInit {
     this.setQueryParam();
     for (let i = 1; i <=  this.mainPage; i++) {this.downloadProducts(i);}
     this.catalogService.getQuery();
-    //*** роутинг по параметру фильтра для определения активной кнопки ***//
     this.selected = this.getRouteFilter()
   }
 
@@ -116,7 +113,6 @@ export class CatalogComponent implements OnInit {
       .subscribe();
   }
 
-  // *** управление поведением кнопки "Загрузить ещё" ***
   getLoadedItems():number {
     const loadedItems =  (this.meta.currentPage - 1) *  this.meta.itemsPerPage +  this.meta.itemCount;
     return loadedItems;
@@ -140,8 +136,6 @@ export class CatalogComponent implements OnInit {
     return newColor;
   }
 
-  // *** Toggles ***
-
   selectedChanged(item: Toggle): void {
     this.selected = item;
     const value = item.filterBy
@@ -149,7 +143,6 @@ export class CatalogComponent implements OnInit {
   }
 
   getRouteFilter() {
-    //*** роутинг по параметру фильтра ***//
     const filter = this.route.snapshot.queryParams["orderBy"];
     const selectedFilter = this.toggles.find(x => x.filterBy === filter);
     if (!filter) {return} else {return selectedFilter};

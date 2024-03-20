@@ -4,7 +4,6 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'app-price',
   template: `
      <div class="mb-10 fw-600">{{price | currency: '₽':'symbol-narrow':'1.0':'ru-RU'}}</div>
-          <!-- знак '₽' можно взять здесь,  AppModule,  @angular/common/locales/ru.mjs -->
   `,
   styles:  [`
   .mb-10 {
