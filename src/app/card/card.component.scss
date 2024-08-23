@@ -1,0 +1,8 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 240px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all .15s ease-in-out;
+}

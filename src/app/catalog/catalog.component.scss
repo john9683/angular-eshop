@@ -1,0 +1,85 @@
+.catalog-section {
+    padding-bottom: 100px;
+}
+
+.catalog__card {
+    transition: all .15s ease-in-out;
+}
+
+.flex-row-sb {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.ngForObject {
+    max-width: 242px;
+    padding: 10px;
+    padding-left: 30px;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all .15s ease-in-out;
+}
+
+.outline-primary {
+    outline: 1px solid #0d6efd;
+}
+
+.outline-card {
+    outline: 1px solid rgb(231, 230, 230);
+}
+
+.hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0.15);
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+
+.flex-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-child {
+    background-color: transparent;
+    transition: all .15s ease-in-out;
+}
+
+.element-hover:hover .btn-child {
+    border-radius: 10px;
+    background-color: #e7effa;
+}
+
+.element-hover:hover .btn-child:hover,
+.btn-child:hover {
+    background-color: transparent;
+}

@@ -1,0 +1,15 @@
+{
+  "items": [
+    { "id": 10, "company": "Google", "title": "Pixel 4 XL 6/128GB", "price": 50400, "image": "https://avatars.mds.yandex.net/get-mpic/1545401/img_id3166910857140137379.jpeg/9hq", "rating": 5, "category": "smartphone" },
+    { "id": 20, "company": "Google", "title": "Pixel 3 64GB", "price": 25912, "image": "https://avatars.mds.yandex.net/get-mpic/1332324/img_id4935485695094159419.jpeg/9hq", "rating": 4, "category": "smartphone" },
+    { "id": 30, "company": "Apple", "title": "iPhone Xr 128GB", "price": 43992, "image": "https://avatars.mds.yandex.net/get-mpic/1360852/img_id2508126924791923402.jpeg/9hq", "rating": 5, "category": "smartphone" },
+    { "id": 40, "company": "Apple", "title": "iPhone 11 128GB", "price": 44560, "image": "https://avatars.mds.yandex.net/get-mpic/1862701/img_id8303576135959179156.png/9hq", "rating": 4, "category": "smartphone" },
+    { "id": 50, "company": "Xiaomi", "title": "Redmi Note 8 64GB", "price": 10057.6, "image": "https://avatars.mds.yandex.net/get-mpic/1417902/img_id8594159820521267051.jpeg/9hq", "rating": 4, "category": "smartphone" },
+    { "id": 60, "company": "Apple", "title": "iPhone Xr 64GB", "price": 34599.200000000004, "image": "https://avatars.mds.yandex.net/get-mpic/1244413/img_id6063597382562623069.jpeg/9hq", "rating": 4, "category": "smartphone" },
+    { "id": 70, "company": "Samsung", "title": "Galaxy Z Fold2 256GB", "price": 143992, "image": "https://avatars.mds.yandex.net/get-mpic/1656415/img_id3677531581674789914.jpeg/9hq", "rating": 5, "category": "smartphone" },
+    { "id": 80, "company": "Apple", "title": "iPhone 11 Pro 512GB", "price": 75992, "image": "https://avatars.mds.yandex.net/get-mpic/1568604/img_id5156618318983465604.jpeg/9hq", "rating": 5, "category": "smartphone" },
+    { "id": 90, "company": "Samsung", "title": "Galaxy S20 Ultra 5G", "price": 63992, "image": "https://avatars.mds.yandex.net/get-mpic/1767151/img_id376121241719262991.jpeg/9hq", "rating": 5, "category": "smartphone" },
+    { "id": 100, "company": "Apple", "title": "iPhone 11 256GB", "price": 50872, "image": "https://avatars.mds.yandex.net/get-mpic/1937077/img_id6597498678352102327.jpeg/9hq", "rating": 5, "category": "smartphone" }
+  ],
+  "meta": { "totalItems": 51, "itemCount": 10, "itemsPerPage": 10, "totalPages": 6, "currentPage": 1 }
+}

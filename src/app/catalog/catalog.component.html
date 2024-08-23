@@ -1,0 +1,61 @@
+<div class="catalog-section">
+
+    <ng-container *ngIf="meta; else loader">
+
+        <div class="flex-row-sb pt-10 mb-10">
+            <div>
+                <h2>Каталог товаров</h2>
+            </div>
+            <div class="flex-btn">
+                <app-cart [inCart]="cartService.inCart" (removeProduct)="cartService.removeProduct($event)" (clear)="cartService.clearCart()"></app-cart>
+            </div>
+        </div>
+
+        <app-toggle-group (emitChangeActiveToggle)="sortProducts($event)">
+            <app-toggle #vc *ngFor='let t of toggles' [filterBy]="t.filterBy">
+                <app-button [tooltip]="tooltipTemplate" [tooltipPosition]="'above'" [tooltipMargin]="10" class="mr-5" [text]='t.label' [isActive]="
+          t === selected
+          || t === this.toggles[0]
+          && this.toggles[1] !== selected && this.toggles[2] !== selected && this.toggles[3] !== selected && this.toggles[4] !== selected && this.toggles[5] !== selected
+          " (click)="selectedChanged(t)">
+                </app-button>
+                <ng-template #tooltipTemplate>Нажмите,&nbsp;чтобы&nbsp;отсортировать&nbsp;товары</ng-template>
+            </app-toggle>
+        </app-toggle-group>
+
+        <div class="catalog">
+            <div *ngFor="let item of productItems" class="mr-20 mb-10">
+                <div class="catalog__card" borderradius="square" outline="rgb(231, 230, 230)">
+                    <app-card [product]="item" class="element-hover">
+                        <app-image [src]="item.image" [productId]="item.id" image></app-image>
+                        <app-company [company]="item.company" [category]="item.category" cart-info></app-company>s
+                        <app-rating [rating]="item.rating" cart-info></app-rating>
+                        <app-title [title]="item.title" cart-info></app-title>
+                        <app-price [price]="item.price" cart-info></app-price>
+                        <div class="card__btn flex-center cart-btn">
+                            <app-button class="btn-child" [text]='"Добавить в корзину"' (click)="cartService.addProduct(item)"></app-button>
+                        </div>
+                    </app-card>
+
+                </div>
+
+                <ol class="ngForObject" borderradius="square" background="#e7effa" outline="true">
+                    <li *ngForObject="let prop of item">{{prop}}</li>
+                </ol>
+
+            </div>
+        </div>
+
+        <footer>
+            <div class="flex-footer">
+                <app-button [text]="setNewText()" [color]="setNewColor()" (click)="downloadProducts()"></app-button>
+            </div>
+        </footer>
+
+    </ng-container>
+
+    <ng-template #loader>
+        <app-loader></app-loader>
+    </ng-template>
+
+</div>

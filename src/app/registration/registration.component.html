@@ -1,0 +1,67 @@
+<div class="mh-200vw">
+    <h2>Регистрация</h2>
+    <form class="registration__form form" #form="ngForm" (ngSubmit)="sendForm(form)">
+
+        <div class="form-group">
+            <div class="flex-row">
+                <label>Имя и Фамилия</label>
+                <div class="error" *ngIf="name.hasError('pattern')">: ошибка! Имя и Фамилия некорректные</div>
+                <div class="error" *ngIf="name.hasError('required')">* обязательное поле</div>
+            </div>
+            <input class="form-control" name="name" #name="ngModel" [ngModel]="user.name" [ngModelOptions]="{updateOn:'blur'}" required pattern="[А-Яа-я-]+\s[А-Яа-я-]+[А-Яа-я -]*">
+        </div>
+
+        <ng-container ngModelGroup="contacts">
+            <div class="form-group">
+                <div class="flex-row">
+                    <label>Email</label>
+                    <div class="error" *ngIf="email.hasError('required')">* обязательное поле</div>
+                    <label>Резервный Email</label>
+                    <div class="error" *ngIf="email.hasError('email')">: ошибка! Некорректный email</div>
+                </div>
+                <input class="form-control" name="email" [ngModel]="user.email" #email="ngModel" [ngModelOptions]="{updateOn:'blur'}" required email>
+            </div>
+        </ng-container>
+
+
+        <div class="form-group">
+            <div class="flex-row">
+                <input class="checkbox" type="checkbox" name="addEmail" value ngModel (ngModelChange)="addReserveEmail($event)">
+                <label class="checkbox-label">Добавить резервный Email</label>
+            </div>
+        </div>
+
+        <ng-container *ngIf="addEmail" ngModelGroup="contacts">
+            <div class="form-group">
+                <div class="flex-row">
+                    <label>Резервный Email</label>
+                    <div class="error" *ngIf="emailReserve.hasError('email')">: ошибка! Некорректный email</div>
+                </div>
+                <input class="form-control" name="emailReserve" #emailReserve="ngModel" [ngModel]="user.emailReserve" [ngModelOptions]="{updateOn:'blur'}" email>
+            </div>
+        </ng-container>
+
+        <ng-container ngModelGroup="password" #passwordGroup="ngModelGroup" appPasswordMatch>
+            <div class="form-group">
+                <div class="flex-row">
+                    <label>Пароль</label>
+                    <div class="error" *ngIf="password.hasError('required')">* обязательное поле</div>
+                    <div class="error" *ngIf="password.hasError('pattern')">: ошибка! Некорректный пароль</div>
+                </div>
+                <input class="form-control" type="password" name="password" ngModel [ngModel]="user.password" #password="ngModel" [ngModelOptions]="{updateOn:'blur'}" required pattern="^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$">
+            </div>
+
+            <div class="form-group">
+                <div class="flex-row">
+                    <label>Подтвердите пароль</label>
+                    <div class="error" *ngIf="passwordGroup.errors">: ошибка! Пароли не совпадают</div>
+                </div>
+                <input class="form-control" type="password" name="passwordConfirm" ngModel [ngModel]="user.passwordConfirm" #passwordConfirm="ngModel" [ngModelOptions]="{updateOn:'blur'}" required>
+            </div>
+        </ng-container>
+
+        <app-button [size]="'large'" [text]='setText()' [color]="setColor()"></app-button>
+
+    </form>
+
+</div>

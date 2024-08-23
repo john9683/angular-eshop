@@ -1,0 +1,27 @@
+<form [formGroup]="searchForm" clickclose="search-close">
+
+    <input id="input" class="input" type="text" placeholder={{placeholder}} maxlength="40" formControlName="searchInput">
+
+    <div class="result" *ngIf="searchResult$ | async as searchResult">
+        <ng-container *ngIf="searchResult.length > 0; else notFound">
+            <div class="result__item" *ngFor="let result of searchResult">
+                <a [routerLink]="['/product', result.id]" (click)="close()">
+        {{result.title}} | {{result.company}} | {{result.category}} | {{result.price | currency: '₽':'symbol-narrow':'1.0':'ru-RU'}} | (артикул: {{result.id}})
+        </a>
+            </div>
+        </ng-container>
+        <ng-template #notFound>
+            <div class="result__item">{{textForNotFound}}</div>
+        </ng-template>
+    </div>
+
+    <div class="search-toogle">
+        <app-search-toogle (toogleFilter)='changeFilterSearch($event)'></app-search-toogle>
+        <div class="close-div">
+            <span id="search-close" (click)="close()" class="material-icons app-icon close-span">
+      close
+    </span>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,8 @@
+<div class="flex-row">
+    <div *ngFor='let t of toggles;'>
+        <app-button class="ml-5" [color]='"default-mix"' [text]='t.label' [isActive]='
+      t === selected
+      || t === this.toggles[0]
+      && this.toggles[1] !== selected && this.toggles[2] !== selected' (click)='selectedFilter(t)'></app-button>
+    </div>
+</div>

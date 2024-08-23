@@ -1,0 +1,34 @@
+<div class="mh-200vw" *ngIf="catalogService.product; else loader">
+
+    <p class="mb-20">productId (для проверки) {{productId}}</p>
+    <p class="mb-20">product.id (для проверки) {{catalogService.product.id}}</p>
+    <p class="mb-20">категория товаров: <span class="fw-600">{{catalogService.product.category}}</span></p>
+
+    <img width="200" class="mb-20" src="{{catalogService.product.image}}" alt="фото товара">
+
+    <div class="mb-20">
+        <a href="https://www.apple.com/ru/" target="_blank">{{catalogService.product.company}}</a>
+    </div>
+
+    <div class="mb-20 fw-600">
+        (id: {{catalogService.product.id}}) {{catalogService.product.title}}
+    </div>
+
+    <div class="mb-20 fw-600">
+        Рейтинг: {{catalogService.product.rating}}
+    </div>
+
+    <div class="mb-20 fw-600">
+        {{catalogService.product.price | currency: '₽':'symbol-narrow':'1.0':'ru-RU'}}
+    </div>
+
+    <div>
+        <h3>Описание товара</h3>
+        <p>{{catalogService.product.descr}}</p>
+    </div>
+
+</div>
+
+<ng-template #loader>
+    <app-loader></app-loader>
+</ng-template>

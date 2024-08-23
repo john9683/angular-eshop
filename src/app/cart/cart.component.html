@@ -1,0 +1,46 @@
+<div class="position-relative">
+
+    <div class="cart__btn position-relative">
+        <div class="cart__btn__bage">{{cartService.getCount()}}</div>
+        <app-button [color]='"primary"' [text]="'Корзина'" (click)='open()'></app-button>
+    </div>
+
+    <div *ngIf="opened" class="cart">
+
+        <div class="cart__header mb-20 border-bottom flex-between">
+            <span>{{cartInfo()}}&nbsp;  <span *ngIf="googsInCart">на сумму {{amount | currency: '₽':'symbol-narrow':'1.0':'ru-RU'}}</span></span>
+
+            <div style="margin-left: auto; cursor: pointer">
+                <span (click)='open()' class="material-icons app-icon">
+        close
+      </span>
+            </div>
+        </div>
+
+        <div class="cart__data">
+            <div *ngFor="let item of cartService.getCart()" class="cart__data__item  mb-20 flex-between">
+                <div class="cart__data__item__content flex-between">
+                    <div class="mr-20">
+                        <img width="80" src="{{item.product.image}}" alt="фото товара">
+                    </div>
+                    <div class="cart__data__item__content__text">
+                        <div>{{item.product.company}}</div>
+                        <div>{{item.product.title}}</div>
+                        <div>{{item.count}} {{qntyGood(item.count)}} {{item.product.price * item.count | currency: '₽':'symbol-narrow':'1.0':'ru-RU'}}</div>
+                    </div>
+                </div>
+                <div class="cart__data__item__delete align-items-end" style="margin-left: auto; cursor: pointer">
+                    <span (click)='remove(item.product)' class="material-icons">delete</span>
+                </div>
+
+            </div>
+
+            <div class="cart__actions flex-between" *ngIf="cartService.getCount()">
+                <app-button [color]="'primary'" [text]='"Оформить заказ"' routerLink="/order"></app-button>
+                <app-button (click)='clearAll()' (click)='open()' [text]='"Очистить корзину"'></app-button>
+            </div>
+
+        </div>
+    </div>
+
+</div>

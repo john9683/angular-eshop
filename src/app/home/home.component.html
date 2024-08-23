@@ -1,0 +1,17 @@
+<div class="flex-column-center pt-40 mh-200vw">
+    <h2 class="mb-20">Только сегодня товары по акции</h2>
+    <div class="gallery mb-20" *ngSlider="let product of productItems;autoplayDelay:2000; autoplay:'on'; let control = controls">
+        <div class="images-wrap">
+            <a [routerLink]="['/product', product?.id]">
+                <img [src]="product?.image" alt="фото товара">
+                <p>{{product?.title}} | {{product?.company}}</p>
+            </a>
+        </div>
+
+        <div class="btn-wrap flex-row-sb">
+            <div class="btn-cirle" (click)="control.prev()"><span class="material-icons btn-coure">arrow_back</span></div>
+            <div class="btn-cirle" (click)="control.next()"><span class="material-icons btn-coure">arrow_forward</span></div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,138 @@
+   .btn {
+     all: unset;
+     cursor: pointer;
+     padding: 12px 20px;
+     text-align: center;
+     border-radius: 10px;
+     font-weight: 500;
+     font-size: 14px;
+     transition: all .15s ease;
+   }
+
+   .default {
+     border: 1px solid transparent;
+     color: black;
+     &:hover:not(.active):not(:active):not(:disabled) {
+       background: rgb(231, 230, 230);
+       border: 1px solid rgb(231, 230, 230);
+     }
+     &:active:not(:disabled) {
+       border: 1px solid #0d6efd;
+     }
+   }
+
+   .default.active {
+     border: 1px solid #0d6efd;
+   }
+
+   .default-mix {
+     border: 1px solid transparent;
+     color: black;
+     &:hover:not(.active):not(:active):not(:disabled) {
+       background: rgb(231, 230, 230);
+       border: 1px solid rgb(231, 230, 230);
+     }
+     &:active:not(:disabled) {
+       background: #e7effa;
+       //  background: rgb(247, 122, 215);
+     }
+   }
+
+   .default-mix.active {
+     background: #e7effa;
+     //  background: rgb(247, 122, 215);
+   }
+
+   .primary {
+    background: #0d6efd;
+    color: #FFFFFF;
+     border: 1px solid #0d6efd;
+     &:hover:not(.active):not(:active):not(:disabled) {
+       background: #025ce2;
+       border: 1px solid #0257d5;
+     }
+     &:active:not(:disabled) {
+       background: #0257d5;
+       border: 1px solid #0252c9;
+     }
+   }
+
+   .primary.active {
+     background: #0257d5;
+     border: 1px solid #0252c9;
+   }
+
+   .success {
+     background: #28a745;
+     color: #FFFFFF;
+     border: 1px solid #28a745;
+     &:hover:not(.active):not(:active):not(:disabled) {
+       background: #218838;
+       border: 1px solid #1e7e34;
+     }
+     &:active:not(:disabled) {
+       background: #1e7e34;
+       border: 1px solid #1c7430;
+     }
+   }
+
+   .success.active {
+     background: #1e7e34;
+     border: 1px solid #1c7430;
+   }
+
+   .warning {
+     background: #ffc107;
+     color: #FFFFFF;
+     border: 1px solid #ffc107;
+     &:hover:not(.active):not(:active):not(:disabled) {
+       background: #e0a800;
+       border: 1px solid #d39e00;
+     }
+     &:active:not(:disabled) {
+       background: #d39e00;
+       border: 1px solid #c69500;
+     }
+   }
+
+   .warning.active {
+     background: #d39e00;
+     border: 1px solid #c69500;
+   }
+
+   .accent {
+     background: rgb(226, 47, 181);
+     color: #FFFFFF;
+     border: 1px solid rgb(226, 47, 181);
+     &:hover:not(.active):not(:active):not(:disabled) {
+       background: rgb(204, 38, 163);
+       border: 1px solid rgb(204, 38, 163);
+     }
+     &:active:not(:disabled) {
+       background: rgb(182, 31, 144);
+       border: 1px solid rgb(182, 31, 144);
+     }
+   }
+
+   .accent.active {
+     background: rgb(182, 31, 144);
+     border: 1px solid rgb(182, 31, 144);
+   }
+
+   .small {
+     padding: 5px 10px;
+     font-size: 12px;
+   }
+
+   .large {
+     padding: 15px 25px;
+     font-size: 16px;
+   }
+
+   .btn:disabled {
+     cursor: default;
+     background: rgb(231, 230, 230);
+     color: grey;
+     border: 1px solid grey;
+     box-shadow: none;
+   }
